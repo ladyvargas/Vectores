@@ -27,6 +27,7 @@ namespace AppVectores
             }
             Console.WriteLine("2 Elevado a la 5 es igual a: {0}", potencia(2, 5));
             vectorInicializar();
+            vector();
             Console.ReadKey();
 
         }
@@ -69,6 +70,30 @@ namespace AppVectores
             }
             Console.WriteLine("La sumatoria es {0}", suma);
             Console.WriteLine("El promedio es {0}", (double)suma/x.Length);
+        }
+
+
+        public static void vector()
+        {
+            Console.WriteLine("\nELEMENTOS DEL VECTOR\n***************\n");
+            int[] x = new int[9];
+            for (int i = 0; i < 9; i++)
+            {
+                Console.WriteLine("Ingrese el {0} numero", (i+1));
+                x[i] = int.Parse(Console.ReadLine());
+
+                if (!(x[i] >= 1 && x[i] <= 1000))
+                {
+                    Console.WriteLine("Ingrese nuevamente el numero {0}", (i + 1));
+                    x[i] = int.Parse(Console.ReadLine());
+                }
+                if (i >= 1)
+                
+                if (x[i] > x[i+1])
+                    {
+                        Console.WriteLine("El mayor {0}", x[i]);
+                    }
+            }
         }
     }
 }
