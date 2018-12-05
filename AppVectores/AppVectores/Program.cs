@@ -77,9 +77,10 @@ namespace AppVectores
         {
             Console.WriteLine("\nELEMENTOS DEL VECTOR\n***************\n");
             int[] x = new int[9];
+            int max = x[0], min = x[0];
             for (int i = 0; i < 9; i++)
             {
-                Console.WriteLine("Ingrese el {0} numero", (i+1));
+                Console.WriteLine("Ingrese el {0} numero", (i + 1));
                 x[i] = int.Parse(Console.ReadLine());
 
                 if (!(x[i] >= 1 && x[i] <= 1000))
@@ -87,13 +88,22 @@ namespace AppVectores
                     Console.WriteLine("Ingrese nuevamente el numero {0}", (i + 1));
                     x[i] = int.Parse(Console.ReadLine());
                 }
-                if (i >= 1)
-                
-                if (x[i] > x[i+1])
-                    {
-                        Console.WriteLine("El mayor {0}", x[i]);
-                    }
             }
+            for (int i = 0; i < 9; i++)
+            {
+                if (x[i] > max)
+
+                    max = x[i];
+
+
+                else if (x[i] < min)
+
+                    min = x[i];
+            }
+            Console.WriteLine("El numero mayor es {0}:", max);
+            Console.WriteLine("El numero menor es {0}:", min);
         }
     }
-}
+
+    }
+
