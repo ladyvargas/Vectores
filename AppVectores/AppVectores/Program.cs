@@ -27,7 +27,7 @@ namespace AppVectores
             }
             Console.WriteLine("2 Elevado a la 5 es igual a: {0}", potencia(2, 5));
             vectorInicializar();
-            vector();
+            vector_clases();
             Console.ReadKey();
 
         }
@@ -83,10 +83,13 @@ namespace AppVectores
                 Console.WriteLine("Ingrese el {0} numero", (i + 1));
                 x[i] = int.Parse(Console.ReadLine());
 
-                if (!(x[i] >= 1 && x[i] <= 1000))
+                for (int y = 0; y < 9; y++)
                 {
-                    Console.WriteLine("Ingrese nuevamente el numero {0}", (i + 1));
-                    x[i] = int.Parse(Console.ReadLine());
+                    if (!(x[i] >= 1 && x[i] <= 1000))
+                    {
+                        Console.WriteLine("Ingrese nuevamente el numero {0}", (i + 1));
+                        x[i] = int.Parse(Console.ReadLine());
+                    }
                 }
             }
             for (int i = 0; i < 9; i++)
@@ -100,8 +103,42 @@ namespace AppVectores
 
                     min = x[i];
             }
-            Console.WriteLine("El numero mayor es {0}:", max);
-            Console.WriteLine("El numero menor es {0}:", min);
+            Console.WriteLine("El numero mayor es = {0}", max);
+            Console.WriteLine("El numero menor es = {0}", min);
+        }
+
+        public static void vector_clases()
+        {
+            Console.WriteLine("\nELEMENTOS DEL VECTOR\n***************\n");
+            int[] x = new int[9];
+            int max = x[0], min = x[0];
+            for (int i = 0; i < 9; i++)
+            {
+                do
+                {
+                    Console.WriteLine("Ingrese el {0} numero", (i + 1));
+                    x[i] = int.Parse(Console.ReadLine());
+
+                    if (!(x[i] >= 1 && x[i] <= 1000))
+                    {
+                        Console.WriteLine("Ingrese nuevamente el numero {0}", (i + 1));
+                        x[i] = int.Parse(Console.ReadLine());
+                    }
+                } while (!(x[i] >= 1 && x[i] <= 1000));
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                if (x[i] > max)
+
+                    max = x[i];
+
+
+                else if (x[i] < min)
+
+                    min = x[i];
+            }
+            Console.WriteLine("El numero mayor es = {0}", max);
+            Console.WriteLine("El numero menor es = {0}", min);
         }
     }
 
